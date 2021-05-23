@@ -1,3 +1,14 @@
+let input__field = document.getElementById('search__input');
+let input__focus = document.getElementById('search__focus')
+let search__expand = document.getElementById('search__bar')
+
+input__focus.addEventListener('click', focusInput)
+
+function focusInput() {
+    // console.log('you clicked')
+   input__field.focus();
+}
+
 const data = {
     "token" : "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",
     "username" : "Jojoarm"
