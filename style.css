@@ -156,6 +156,8 @@ body {
   height: 70px;
   /* align-items: center; */
   padding-left: 10px;
+  background-color: #0d1117;
+  z-index: 99;
   border-bottom: 1px dotted rgba(245, 245, 245, 0.205);
 }
 
@@ -244,6 +246,7 @@ body {
 
 .main__container .avatar__container {
   position: relative;
+  z-index: 999;
 }
 
 .avatar__container .avatar {
@@ -335,4 +338,139 @@ body {
 .sidebar__info .profile__icons p,
 .sidebar__info .profile__contact p {
   padding-left: 10px;
+}
+
+.repo__feed {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  align-items: center;
+  margin-right: 25px;
+}
+
+.repo__search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px dotted rgba(245, 245, 245, 0.205);
+  padding: 15px 0;
+}
+
+.repo__search input {
+  outline: none;
+  border: 1px dotted rgba(245, 245, 245, 0.205);
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: #0d1117;
+  color: #fff;
+  width: 55%;
+  height: 35px;
+  margin-right: 10px;
+}
+
+.repo__search input:focus {
+  border: 1px solid rgba(34, 34, 116);
+}
+
+.repo__search .new__repo,
+.repo__search .search__option,
+.repo__box .repo__title .search__option {
+  display: flex;
+  padding: 7px 20px;
+  font-size: 14px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dotted rgba(245, 245, 245, 0.205);
+  margin-right: 5px;
+}
+
+.repo__search .search__option {
+  background-color: #1b1f24;
+}
+
+.repo__search .search__option p {
+  padding-right: 5px;
+}
+
+.repo__search .new__repo {
+  background-color: rgb(64, 153, 64);
+}
+
+.repo__search .new__repo p {
+  padding-left: 5px;
+}
+
+.repo__list,
+.repo__box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.repo__box {
+  padding: 30px 0px;
+  border-bottom: 1px dotted rgba(245, 245, 245, 0.205);
+}
+
+.repo__box .repo__title {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.repo__box .repo__title .repo__name {
+  color: rgb(82, 82, 252);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.repo__box .repo__title .search__option {
+  background-color: #1b1f24;
+}
+
+.repo__info p {
+  font-size: 12px;
+  font-weight: 300;
+  color: lightgray;
+}
+
+.repo__info i {
+  font-size: 14px;
+  font-weight: 300;
+  padding-right: 3px;
+}
+
+.repo__info,
+.repo__languageBox,
+.repo__rating {
+  display: flex;
+}
+
+.repo__update,
+.repo__languageBox,
+.repo__rating {
+  margin-right: 20px;
+}
+
+.repo__languageBox {
+  display: flex;
+  margin-right: 10px;
+}
+
+.repo__languageIcon {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: orange;
+  border: none;
+  margin-right: 3px;
+}
+
+.repo__language {
+  font-size: 12px;
+  font-weight: 200;
 }
