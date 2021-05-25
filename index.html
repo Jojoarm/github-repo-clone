@@ -34,14 +34,18 @@
                         <i class="fas fa-sort-down"></i>
                     </div>
                     <div class='avatar__icon'>
-                        <div class='avatar'></div>
+                        <div class='avatar'>
+                            <img id='avatar__img1' />
+                        </div>
                         <i class="fas fa-sort-down"></i>
                     </div>
                 </div>
             </header>
             <header class='header2'>
                 <div class='header2__description'>
-                    <div class='avatar'></div>
+                    <div class='avatar'>
+                        <img id='avatar__img2' />
+                    </div>
                     <p>Jojoarm</p>
                 </div>
                 <div class='header2__info'>
@@ -51,7 +55,7 @@
                 <div class='header2__info'>
                     <i class='bx bx-clipboard'></i>
                     <p>Repositories</p>
-                    <div class='count'>28</div>
+                    <div id='repo__count' class='count'></div>
                 </div>
                 <div class='header2__info'>
                     <i class='bx bx-bar-chart-square'></i>
@@ -65,15 +69,17 @@
             <div class='main__container'>
                 <div class='sidebar'>
                     <div class='avatar__container'>
-                        <div class='avatar'></div>
+                        <div class='avatar avatarcheck'>
+                            <img id='avatar__img3' />
+                        </div>
                         <div class='smiley'>
                             <i class="far fa-grin"></i>
                         </div>
                     </div>
                     <div class='sidebar__info'>
-                        <h2 class='name' id='name'>George Ofogba</h2>
-                        <span class="username" id='username'>Jojoarm</span>
-                        <p class='description' id='description'>Smart, enthusiastic engineer, Front End Developer working on becoming a Full Stack developer</p>
+                        <h2 class='name' id='name'></h2>
+                        <span class="username" id='username'></span>
+                        <p class='description' id='description'></p>
                         <div class='profile__box'>
                             <p>Edit Profile</p>
                         </div>
@@ -88,15 +94,15 @@
                         </div>
                         <div class='profile__contact'>
                             <i class='bx bx-map' ></i>
-                            <p id='address'>Lagos, Nigeria</p>
+                            <p id='address'></p>
                         </div>
                         <div class='profile__contact'>
                             <i class='bx bx-envelope'></i>
-                            <p id='email'>ofogbageorge3@gmail.com</p>
+                            <p id='email'></p>
                         </div>
                         <div class='profile__contact'>
                             <i class='bx bxl-twitter' ></i>
-                            <p id='twitter__username'>@JojoArmani24</p>
+                            <p id='twitter__username'></p>
                         </div>
                     </div>
                 </div>
@@ -120,31 +126,9 @@
                             <p>New</p>
                         </div>
                     </div>
-                    <div class='repo__list'>
-                        <div class='repo__box'>
-                            <div class='repo__title'>
-                                <p class='repo__name' id='repo__name'>Github Clone</p>
-                                <div class="search__option">
-                                    <p>Star</p>
-                                    <i class='bx bx-star' ></i>
-                                </div>
-                            </div>
-                            <div class='repo__info'>
-                                <div class='repo__languageBox'>
-                                    <span class='repo__languageIcon' id='repo__languageIcon'></span>
-                                    <p class='repo__language' id='repo__language'>Javascript</p>
-                                </div>
-                                <div class='repo__rating'>
-                                    <i class='bx bx-star' ></i>
-                                    <p id='repo__star'>22</p>
-                                </div>
-                                <div class='repo__rating'>
-                                    <i class='bx bx-git-repo-forked'></i>
-                                    <p id='repo__fork'>22</p>
-                                </div>
-                                <p class='repo__update'>Updated <span id='repo__update'>13 days ago</span></p>
-                            </div>
-                        </div>
+                    <div id='repo__list' class='repo__list'>
+                        
+                    </div>
                     </div>
                 </div>
             </div>
