@@ -2,29 +2,53 @@ let input__field = document.getElementById('search__input');
 let input__focus = document.getElementById('search__focus')
 let search__expand = document.getElementById('search__bar')
 let avatarImg = document.getElementById('avatar__img1')
+let avatarImgM = document.getElementById('avatar__imgM')
 let avatarImg2 = document.getElementById('avatar__img2')
 let avatarImg3 = document.getElementById('avatar__img3')
-let userName = document.getElementById('name')
-let userLogin = document.getElementById('username')
-let userBio = document.getElementById('description')
+let userName = document.querySelectorAll('.name')
+let userLogin = document.querySelectorAll('.username')
+let userBio = document.querySelectorAll('.description')
 let userAddress = document.getElementById('address')
-let userEmail = document.getElementById('email')
+let userEmail = document.querySelectorAll('#email')
 let userTwitter = document.getElementById('twitter__username')
 let repoCount = document.getElementById('repo__count')
+let repoCount2 = document.getElementById('repo__count2')
 let repoList = document.getElementById('repo__list')
+// const submitButton = document.getElementById('submit__button')
+const inputValue = document.getElementById('user__login')
+
+// console.log('You clicked submit and the value is', inputValue.innerText )
+
+window.onload=function(){
+    // submitButton.addEventListener('click', getUserName)
+
+    // function getUserName(e) {
+    //     e.preventDefault()
+    //     console.log('You clicked submit and the value is', inputValue.value )
+    // }
+    document.getElementById("submit__button").addEventListener("click", myFunction);
+    function myFunction(e) {
+        e.preventDefault()
+      window.location.href="index2.html";
+      localStorage.setItem('username', inputValue.value)
+    //   console.log('You clicked submit and the value is', inputValue.value )
+    }
+
+  }
+
+  const getUser = localStorage.getItem('username')
+  console.log(getUser)
 
 input__focus.addEventListener('click', focusInput)
 
 function focusInput() {
-    // console.log('you clicked')
    input__field.focus();
 }
 
 const data = {
-    "token" : " a0a0d662537690fa1b827a82d9d818d220b8f93d",
-    "username" : "Jojoarm"
-    // "token" : "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",
-    // "username" : "Jojoarm"
+    "token" : "ghp_bjZM30w3X6g2RfRO0ytj3tI6speaFu0GKr**",
+    "username" : `${getUser}`
+
 }
 
 // const fetch = requirejs(["node-fetch"]);
@@ -32,7 +56,7 @@ const data = {
 const query_repo = {
   query: `
         query { 
-            user(login: "Jojoarm") { 
+            user(login: "${getUser}") { 
             name,
                 
             avatarUrl,
@@ -131,40 +155,42 @@ then(res => res.json())
     avatarImg.src = repo__data.user.avatarUrl
     avatarImg2.src = repo__data.user.avatarUrl
     avatarImg3.src = repo__data.user.avatarUrl
-    userName.innerText = repo__data.user.name
-    userLogin.innerText = repo__data.user.login
-    userBio.innerText = repo__data.user.bio
+    avatarImgM.src = repo__data.user.avatarUrl
+    userName.forEach(user => user.innerText = repo__data.user.name)
+    userLogin.forEach(user => user.innerText = repo__data.user.login)
+    userBio.forEach(user => user.innerText = repo__data.user.bio)
     userAddress.innerText = repo__data.user.location
-    userEmail.innerText = repo__data.user.email
+    userEmail.forEach(user => user.innerText = repo__data.user.email)
     userTwitter.innerText = `@${repo__data.user.twitterUsername}`
     repoCount.innerText = repo__data.user.repositories.totalCount
-    console.log(repositories.length)
+    repoCount2.innerText = repo__data.user.repositories.totalCount
 
     repoList.innerHTML = ''
     repositories.map(repository => {
         repoList.innerHTML += `
             <div class='repo__box'>
-            <div class='repo__title'>
-                <p class='repo__name' id='repo__name'>${repository.name}</p>
-                <div class="search__option">
-                    <p>Star</p>
-                    <i class='bx bx-star' ></i>
+                <div class='repo__title'>
+                    <p class='repo__name' id='repo__name'>${repository.name}</p>
+                    <div class="search__option">
+                        <p>Star</p>
+                        <i class='bx bx-star' ></i>
+                    </div>
                 </div>
-            </div>
-            <div class='repo__info'>
-                <div class='repo__languageBox'>
-                    <span class='repo__languageIcon' style="background-color:${repository.primaryLanguage?.color};" id='repo__languageIcon'></span>
-                    <p  class='repo__language' id='repo__language'>${repository.primaryLanguage?.name}</p>
-                </div>
-                <div class='repo__rating'>
-                    <i class='bx bx-star' ></i>
-                    <p id='repo__star'>${repository.stargazerCount}</p>
-                </div>
-                <div class='repo__rating'>
-                    <i class='bx bx-git-repo-forked'></i>
-                    <p id='repo__fork'>${repository.forkCount}</p>
-                </div>
-                <p class='repo__update'>Updated <span id='repo__update'>${getTime(repository.updatedAt)}</span></p>
+                <div class='repo__info'>
+                    <div class='repo__languageBox'>
+                        <span class='repo__languageIcon' style="background-color:${repository.primaryLanguage?.color};" id='repo__languageIcon'></span>
+                        <p  class='repo__language' id='repo__language'>${repository.primaryLanguage?.name}</p>
+                    </div>
+                    <div class='repo__rating'>
+                        <i class='bx bx-star' ></i>
+                        <p id='repo__star'>${repository.stargazerCount}</p>
+                    </div>
+                    <div class='repo__rating'>
+                        <i class='bx bx-git-repo-forked'></i>
+                        <p id='repo__fork'>${repository.forkCount}</p>
+                    </div>
+                    <p class='repo__update'>Updated <span id='repo__update'>${getTime(repository.updatedAt)}</span></p>
+                
             </div>
         `
     })

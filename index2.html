@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github Profile Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+</head>
+<body>
+    <div class='container'>
+        <div class='headers'>
+            <header class='header1'>
+                <div class='header1__items'>
+                    <i class="fab fa-github"></i>
+                    <div id='search__bar' class='search__bar'>
+                        <input id="search__input" type="text" placeholder="Search or jump to..." />
+                        <div id='search__focus' class='search__expand'>/</div>
+                    </div>
+                    <ul>
+                        <li>Pull requests</li>
+                        <li>Issues</li>
+                        <li>Marketplace</li>
+                        <li>Explore</li>
+                    </ul>
+                </div>
+                <div class='header1__icons'>
+                    <i class="far fa-bell"></i>
+                    <div class='add__icon'>
+                        <p>+</p>
+                        <i class="fas fa-sort-down"></i>
+                    </div>
+                    <div class='avatar__icon'>
+                        <div class='avatar'>
+                            <img id='avatar__img1' />
+                        </div>
+                        <i class="fas fa-sort-down"></i>
+                    </div>
+                </div>
+            </header>
+            <header class='header2'>
+                <div class='header2__description'>
+                    <div class='avatar'>
+                        <img id='avatar__img2' />
+                    </div>
+                    <p class='username' id='username3'></p>
+                </div>
+                <div class='header2__info'>
+                    <i class='bx bx-book-open'></i>
+                    <p>Overview</p>
+                </div>
+                <div class='header2__info'>
+                    <i class='bx bx-clipboard'></i>
+                    <p>Repositories</p>
+                    <div id='repo__count' class='count'></div>
+                </div>
+                <div class='header2__info'>
+                    <i class='bx bx-bar-chart-square'></i>
+                    <p>Projects</p>
+                </div>
+                <div class='header2__info'>
+                    <i class='bx bx-cube'></i>
+                    <p>Packages</p>
+                </div>
+            </header>
+
+
+            <!-- Header for Mobile View -->
+        <div class='header__mobile'>
+            <header class='header__mobile1'>
+                <i class='bx bx-menu'></i>
+                <i class="fab fa-github"></i>
+                <i class="far fa-bell"></i>
+            </header>
+            <div class='profile__infoMobile'>
+                <div class='avatarMobile'>
+                    <img id='avatar__imgM' />
+                </div>
+                <div >
+                    <h2 class='name' id='name2'></h2>
+                    <span class="username" id='username2'></span>
+                </div>
+            </div>
+            <div id='search__bar' class='search__barMobile'>
+                <i class="far fa-grin"></i>
+                <input id="search__input2" type="text" placeholder="Set status..." />
+            </div>
+            <p class='description' id='description2'></p>
+            <div class='profile__box'>
+                <p>Edit Profile</p>
+            </div>
+            <div class='profile__contact'>
+                <i class='bx bx-envelope'></i>
+                <p id='email'></p>
+            </div>
+
+            <header class='header__mobile2'>
+                <div class='header__mobile2Info'>
+                    <p>Overview</p>
+                </div>
+                <div class='header__mobile2Info info__selected'>
+                    <p>Repositories</p>
+                    <div id='repo__count2' class='count'></div>
+                </div>
+                <div class='header__mobile2Info'>
+                    <p>Projects</p>
+                </div>
+                <div class='header__mobile2Info'>
+                    <p>Packages</p>
+                </div>
+            </header>
+
+            <div class='repo__searchMobile'>
+                <div class="new__repoMobile">
+                    <i class='bx bx-clipboard'></i>
+                    <p>New</p>
+                </div>
+                <div class='repo__searchOptionsMobile'>
+                    <input id="search__repo" type="text" placeholder="Find a repository..." />
+                    <div class='search__options'>
+                        <div class="search__option">
+                            <p>Type</p>
+                            <i class="fas fa-sort-down"></i>
+                        </div>
+                        <div class="search__option">
+                            <p>Language</p>
+                            <i class="fas fa-sort-down"></i>
+                        </div>
+                        <div class="search__option">
+                            <p>Sort</p>
+                            <i class="fas fa-sort-down"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <!-- Main Section -->
+            <div class='main__container'>
+                <div class='sidebar'>
+                    <div class='avatar__container'>
+                        <div class='avatar avatarcheck'>
+                            <img id='avatar__img3' />
+                        </div>
+                        <div class='smiley'>
+                            <i class="far fa-grin"></i>
+                        </div>
+                    </div>
+                    <div class='sidebar__info'>
+                        <h2 class='name' id='name'></h2>
+                        <span class="username" id='username'></span>
+                        <p class='description' id='description'></p>
+                        <div class='profile__box'>
+                            <p>Edit Profile</p>
+                        </div>
+                        <div class='profile__contact'>
+                            <i class='bx bx-map' ></i>
+                            <p id='address'></p>
+                        </div>
+                        <div class='profile__contact'>
+                            <i class='bx bx-envelope'></i>
+                            <p id='email'></p>
+                        </div>
+                        <div class='profile__contact'>
+                            <i class='bx bxl-twitter' ></i>
+                            <p id='twitter__username'></p>
+                        </div>
+                    </div>
+                </div>
+                <div class='repo__feed'>
+                    <div class='repo__search'>
+                        <input id="search__repo" type="text" placeholder="Find a repository..." />
+                        <div class="search__option">
+                            <p>Type</p>
+                            <i class="fas fa-sort-down"></i>
+                        </div>
+                        <div class="search__option">
+                            <p>Language</p>
+                            <i class="fas fa-sort-down"></i>
+                        </div>
+                        <div class="search__option">
+                            <p>Sort</p>
+                            <i class="fas fa-sort-down"></i>
+                        </div>
+                        <div class="new__repo">
+                            <i class='bx bx-clipboard'></i>
+                            <p>New</p>
+                        </div>
+                    </div>
+                    <div id='repo__list' class='repo__list'>
+                        
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src='script.js'></script>
+</body>
+</html>
